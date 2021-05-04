@@ -3,7 +3,7 @@ Cal Poly Mechatronics Final Project, Winter 2020
 
 Video Demo: https://youtu.be/V-FPE-wgGrk  
 
-![Robot Picture](/Images/robot.png)
+![Robot Picture](/Images/sumo_robot.png)
 
 ## Introduction
 Robot-sumo is a competition where two robots attempt to push each other outside of a circular arena. There are various classes of competitions that are held worldwide. To solve the associated engineering challenges, sensors are typically used to find the opponent and detect the arena edge and an angled blade is used to push the opponent. The target customer of the robot we designed is someone who wants to participate in an autonomous sumo robot competition but does not have experience with building mechatronics projects on their own.
