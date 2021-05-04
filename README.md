@@ -3,7 +3,7 @@ Cal Poly Mechatronics Final Project, Winter 2020
 
 Video Demo: https://youtu.be/V-FPE-wgGrk  
 
-![Robot Picture](/images/robot.png)
+![Robot Picture](/Images/robot.png)
 
 ## Introduction
 Robot-sumo is a competition where two robots attempt to push each other outside of a circular arena. There are various classes of competitions that are held worldwide. To solve the associated engineering challenges, sensors are typically used to find the opponent and detect the arena edge and an angled blade is used to push the opponent. The target customer of the robot we designed is someone who wants to participate in an autonomous sumo robot competition but does not have experience with building mechatronics projects on their own.
@@ -14,7 +14,7 @@ In order to build a working robot, various mechanical, electrical, and software 
 
 ## Specifications
 Table 1: Robot Specifications
-![Robot Specifications](/images/specifications.png)
+![Robot Specifications](/Images/specifications.png)
 
 The robot had to use the following components at a minimum.
 - An ME405 board or equivalent microcontroller running MicroPython
@@ -39,12 +39,12 @@ The sumo bot had two different IR sensors, which were used for different goals. 
 
 To move the bot we picked Micro Metal Geared motors for their low power consumption and small size, making the overall design for the bot smaller. This allowed us to utilize a smaller battery to power the motors, which also makes the bot lighter and more agile. An emergency stop button was also included to enable power to be cut to the motors at any time. Choosing the right wheels was only a matter of finding ones with the correct hole size for the motor shaft to go into. The sumo bot will need to be able to turn, so we decided to use a castor in the front that slides on the arena surface when the motors move in opposite directions. For simplicity, we used a 9 V battery to power the motors and a small phone charger battery to power the board over a USB cable. The overall system architecture showing all of the components is shown in Figure 1.
 
-![System Architecture](/images/system_architecture.png)
+![System Architecture](/Images/system_architecture.png)
 Figure 1: System Architecture
 
 The housing for the system was 3D printed with thermoplastic. The housing included pockets for all of the components, and the top was left open to allow direct access to the components and minimize the overall weight. The design of the 3D printed enclosure is shown in Figure 2.
 
-![CAD Model](/images/cad_model.png)
+![CAD Model](/Images/cad_model.png)
 Figure 2: Enclosure CAD Model
 
 ### Software Design
@@ -52,12 +52,12 @@ The software was written using MicroPython and its various libraries. The design
 
 The overall task diagram of the robot is shown in Figure 3. The command share stores a binary value indicating whether a remote keypress is the start command. The data queue stores the pattern of the IR signal. The dist share stores the distance away an obstacle is from the front of the robot. The accel share stores the acceleration along the x-axis. The edge share stores a binary value indicating whether the robot is near the edge of the arena. The dir_L and dir_R shares store values indicating the directions (forward, backward, stop) the left and right motors should turn.
 
-![Task Diagram](/images/task_diagram.png)
+![Task Diagram](/Images/task_diagram.png)
 Figure 3: Task Diagram
 
 The software as a whole runs the four tasks used to collect data from the sensors, then runs the Operate Brain task to process the data and determine the best response by the motors, and then uses the encoder class and motor driver class to actuate the motors. A software flowchart of the Operate Brain task is shown in Figure 4. This task controls how the robot moves based on sensor input and is the core logic of the programming.
 
-![Task Diagram](/images/software_flowchart.png)
+![Task Diagram](/Images/software_flowchart.png)
 Figure 3: Software Flowchart
 
 ### Testing
@@ -74,11 +74,11 @@ In future development, the opponent search strategy can be improved in software.
 The total cost for the components of this project is $87.34. The individual prices of the items are shown in Table 2. Provided items, such as the microcontroller and motor driver boards and 3D printing materials, were not factored into the bill of materials.
 
 Table 2: Project Bill of Materials
-![Project Bill of Materials](/images/bom.png)
+![Project Bill of Materials](/Images/bom.png)
 
 ## References
 [1] “Arduino Sumo Robot”, Instructables, https://www.instructables.com/id/How-to-MakeArduino-Sumo-Robot.
 
 [2] “STM32L476xx Data Sheet”, https://www.st.com/resource/en/datasheet/stm32l476je.pdf.
 
-[3] Ridgely, John. “Source Code for MMA8451 Accelerometer”, http://wind.calpoly.edu/ ME405/doc/classmma845x__shell_1_1MMA845x.html#details.
+[3] Ridgely, John. “Source Code for MMA8451 Accelerometer”, http://wind.calpoly.edu/ME405/doc/classmma845x__shell_1_1MMA845x.html#details.
